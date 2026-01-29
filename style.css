@@ -1,0 +1,41 @@
+.menu{
+    background-color: #000;
+    color: #fff;
+}
+
+ul{
+    color: #fff;
+}
+
+.parallax-banner {
+    background-image: url('assets/banner_latte.jpg');
+    height: 350px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: rgba(0,0,0,0.3);
+    background-blend-mode: overlay;
+}
+
+.arrendondado{
+    border-radius: 25% 20%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .anos {
+        flex-direction: column !important; 
+        align-items: center;              
+        padding: 20px;      
+        gap: 20px !important; 
+    }
+    .anos .card {
+        width: 100% !important;
+    }
+
+    .anos img{
+        width: 100%;
+        border-radius: 0;
+    }
+}
