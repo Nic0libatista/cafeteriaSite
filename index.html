@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
 </head>
 <body>
     
@@ -21,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link ativo" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#sobre">Sobre</a>
@@ -60,20 +62,35 @@
 </nav>
 
 <!-- banner -->
-<div class="position-relative overflow-hidden bg-light" style="height: 400px;">
-  <img src="assets/banner_latte.jpg" class="position-absolute w-100 h-100" style="object-fit: cover; top: 0; left: 0; z-index: 1;" alt="Banner: cappuccino">
+<div class="banner">
   
-  <div class="position-relative p-5 m-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-    <h1 class="display-4 fw-bold">Título pro Banner</h1>
-    <p class="lead">Bla bla bla.</p>
-    <a href="#" class="btn btn-primary btn-lg">Clique Aqui</a>
+  <div class="slide-item position-relative" style="height: 450px;">
+    <img src="assets/banner_latte.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Banner: cappuccino">
+    <div class="position-absolute top-50 start-0 translate-middle-y p-5 ms-5 text-start w-50" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+      <h1 class="display-4 fw-bold">O Café Perfeito</h1>
+      <p class="lead">Sinta o aroma do grão moído na hora.</p>
+      <a href="#cardapio" class="btn btn-primary btn-lg">Ver Cardápio</a>
+    </div>
   </div>
+
+  <div class="slide-item position-relative" style="height: 450px;">
+    <img src="assets/bannerambiente.png" class="w-100 h-100" style="object-fit: cover;" alt="Ambiente">
+    <div class="position-absolute top-50 end-0 translate-middle-y p-5 me-5 text-end w-50" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+      <h1 class="display-4 fw-bold">Seu Novo Refúgio</h1>
+      <p class="lead">Um espaço aconchegante para os seus melhores momentos.</p>
+      <a href="#sobre" class="btn btn-primary btn-lg">Conheça Nossa Casa</a>
+    </div>
+  </div>
+
 </div>
+
+  
+
 
 <!-- bem vindo -->
  <div class="mt-5 mx-auto text-center bg-light text-center w-75">
-    <p> Bem vindo à <br>
-    <b class="display-4"> Casa do Barista </b> <br>
+    <p> Bem vindo á: <br>
+    <b class="display-4 m-2"> Casa do Barista </b> <br>
     Na Casa do Barista, o café é mais do que uma bebida, é o nosso jeito de receber amigos.
     Preparamos cada xícara com cuidado artesanal e uma pitada de paixão, para que você encontre 
     aqui o seu refúgio diário. Puxe uma cadeira, respire o aroma do grão moído na hora e aproveite 
@@ -128,40 +145,107 @@
  <div class="container">
     <div class="bg-dark mt-5 d-flex gap-5 text-center justify-content-center p-2 anos">
         <div class="card" style="width: 18rem;">
-        <img src="assets/banner.png" class="card-img-top arrendondado px-5 pt-3" alt="...">
+        <img src="assets/graos.jpg" class="card-img-top arrendondado px-5 pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Cafés especiais de origem selecionada</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <h5 class="card-title">Grãos Selecionados</h5>
+            <p class="card-text">Cafés 100% arábica das melhores regiões do Brasil, com torra artesanal para garantir frescor e sabor.</p>
         </div>
         </div>
 
             <div class="card" style="width: 18rem;">
-        <img src="assets/banner.png" class="card-img-top arrendondado px-5 pt-3" alt="...">
+        <img src="assets/ambiente.jpg" class="card-img-top arrendondado px-5 pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Cafés especiais de origem selecionada</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <h5 class="card-title">O Refúgio Perfeito</h5>
+            <p class="card-text">Um espaço pensado para seu conforto, ideal para encontros com amigos ou para focar no seu trabalho.</p>
         </div>
         </div>
 
 
             <div class="card" style="width: 18rem;">
-        <img src="assets/banner.png" class="card-img-top arrendondado px-5 pt-3" alt="...">
+        <img src="assets/sabores.jpg" class="card-img-top arrendondado px-5 pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Cafés especiais de origem selecionada</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <h5 class="card-title">Sabores Artesanais</h5>
+            <p class="card-text">Harmonize seu café com receitas exclusivas, preparadas diariamente com ingredientes frescos e amor.</p>
         </div>
         </div>
-
-
-
-
     </div>
  </div>
+
+
+  <!-- Cardapio -->
+<div class="mt-5 parallax-banner d-flex align-items-center justify-content-center text-center">
+  
+  <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+    <h1 class="display-4 fw-bold">Cardapio</h1>
+    <p class="lead">O que você encontra na Casa do Barista</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cardapio m-5 d-flex gap-5">
+
+    <div class="card cardhover border-secondary" style="width: 22rem;">
+  <img src="assets/graos.jpg" class="card-img-left w-50 m-2" alt="...">
+  <div class="card-body">
+   <div class="linha d-flex justify-content-between align-items-center w-75">
+     <h5 class="card-title">Nome </h5>
+    <h5 class="card-price text-end hide"> R$ </h5>
+   </div>
+    <p class="card-text hide"> Descrição </p>
+  </div>
+</div>
+
+   <div class="card cardhover border-secondary" style="width: 22rem;">
+  <img src="assets/graos.jpg" class="card-img-left w-50 m-2" alt="...">
+  <div class="card-body">
+   <div class="linha d-flex justify-content-between align-items-center w-75">
+     <h5 class="card-title">Nome </h5>
+    <h5 class="card-price text-end hide"> R$ </h5>
+   </div>
+    <p class="card-text hide"> Descrição </p>
+  </div>
+</div>
+
+   <div class="card cardhover border-secondary" style="width: 22rem;">
+  <img src="assets/graos.jpg" class="card-img-left w-50 m-2" alt="...">
+  <div class="card-body">
+   <div class="linha d-flex justify-content-between align-items-center w-75">
+     <h5 class="card-title">Nome </h5>
+    <h5 class="card-price text-end hide"> R$ </h5>
+   </div>
+    <p class="card-text hide"> Descrição </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
 
 
 <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.banner').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows:true,
+      dots:true
+
+      });
+    });
+  </script>
+
 </body>
 </html>

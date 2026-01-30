@@ -7,6 +7,39 @@ ul{
     color: #fff;
 }
 
+.ativo{
+    color:orange;
+}
+
+
+.slick-prev, .slick-next {
+    z-index: 100 !important; 
+   
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #b72020 !important;
+}
+
+.slick-prev {
+    left: 25px !important; 
+}
+
+.slick-next {
+    right: 25px !important; 
+}
+
+.slick-dots li button:before {
+    color: #b72020 !important;
+    font-size: 12px !important;
+    opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+    color: rgb(116, 54, 54) !important;
+    opacity: 1;
+}
+
 .parallax-banner {
     background-image: url('assets/banner_latte.jpg');
     height: 350px; 
@@ -23,6 +56,10 @@ ul{
     border-radius: 25% 20%;
 }
 
+.cardhover:hover img{
+width: 100%;
+}
+
 @media only screen and (max-width: 1000px) {
     .anos {
         flex-direction: column !important; 
@@ -37,5 +74,15 @@ ul{
     .anos img{
         width: 100%;
         border-radius: 0;
+    }
+
+     .cardapio {
+        flex-direction: column !important; 
+        align-items: center;              
+        padding: 10px;      
+        gap: 20px !important; 
+    }
+    .cardapio .card{
+       
     }
 }
