@@ -53,7 +53,8 @@ ul{
 }
 
 .bannerdestaque{
-    background-image: url('assets/banner_latte.jpg');
+    background-image: url('assets/vitrini.jpg');
+    opacity: 0.9;
 }
 
 .bannercardapio{

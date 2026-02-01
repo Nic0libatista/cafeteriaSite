@@ -17,7 +17,7 @@ O site Casa do Barista é uma plataforma web institucional desenvolvida com foco
 - Modal notificando que as redes sociais são fictícias;
 - Rodapé informativo.
 
-  ## este site é responsivo!
+  ## Esse site é responsivo!
   <b> Escaneie o QrCode e veja pelo seu dispositivo movel! </b><br>
  ![](assets/qrcode.png)
   
