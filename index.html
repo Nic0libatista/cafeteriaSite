@@ -44,9 +44,9 @@
  <div class="d-flex align-items-center gap-5 ms-lg-5">
         <div class="contato mg-10">
             <ul class="list-unstyled m-0 d-flex gap-2 text-white">
-                <li><i class="bi bi-facebook"></i></li>
-                <li><i class="bi bi-linkedin"></i></li>
-                <li><i class="bi bi-whatsapp"></i></li>
+                <li><i class="bi bi-facebook" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></li>
+                <li><i class="bi bi-linkedin" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></li>
+                <li><i class="bi bi-whatsapp" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></li>
             </ul>
         </div>
 
@@ -90,7 +90,7 @@
 <!-- bem vindo -->
  <div class="mt-5 mx-auto text-center bg-light text-center w-75">
     <p> Bem vindo á: <br>
-    <b class="display-4 m-2"> Casa do Barista </b> <br>
+    <b class="display-4 m-2" style="color: #5d4037;"> Casa do Barista </b> <br>
     Na Casa do Barista, o café é mais do que uma bebida, é o nosso jeito de receber amigos.
     Preparamos cada xícara com cuidado artesanal e uma pitada de paixão, para que você encontre 
     aqui o seu refúgio diário. Puxe uma cadeira, respire o aroma do grão moído na hora e aproveite 
@@ -133,7 +133,7 @@
 
 
  <!-- DESTAQUE -->
-<div class="mt-5 parallax-banner d-flex align-items-center justify-content-center text-center">
+<div class="mt-5 parallax-banner bannerdestaque d-flex align-items-center justify-content-center text-center">
   
   <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
     <h1 class="display-4 fw-bold">Destaque</h1>
@@ -142,10 +142,10 @@
 </div>
 
 
- <div class="bg-black">
-    <div class="bg-dark mt-5 d-flex gap-5 text-center justify-content-center p-2 anos">
+ <div>
+    <div class="destaque mt-5 d-flex gap-5 text-center justify-content-center p-2 anos">
         <div class="card" style="width: 18rem;">
-        <img src="assets/graos.jpg" class="card-img-top arrendondado px-5 pt-3" alt="...">
+        <img src="assets/graos.jpg" class="card-img-top arrendondado px-5 pt-3" alt="imagem: grãos de café">
         <div class="card-body">
             <h5 class="card-title">Grãos Selecionados</h5>
             <p class="card-text">Cafés 100% arábica das melhores regiões do Brasil, com torra artesanal para garantir frescor e sabor.</p>
@@ -153,7 +153,7 @@
         </div>
 
             <div class="card" style="width: 18rem;">
-        <img src="assets/ambiente.jpg" class="card-img-top arrendondado px-5 pt-3" alt="...">
+        <img src="assets/ambiente.jpg" class="card-img-top arrendondado px-5 pt-3" alt="imagem: foto do ambiente">
         <div class="card-body">
             <h5 class="card-title">O Refúgio Perfeito</h5>
             <p class="card-text">Um espaço pensado para seu conforto, ideal para encontros com amigos ou para focar no seu trabalho.</p>
@@ -162,7 +162,7 @@
 
 
             <div class="card" style="width: 18rem;">
-        <img src="assets/sabores.jpg" class="card-img-top arrendondado px-5 pt-3" alt="...">
+        <img src="assets/sabores.jpg" class="card-img-top arrendondado px-5 pt-3" alt="imagem: foto de uma mesa de madeira com bolo, pães, café e suco">
         <div class="card-body">
             <h5 class="card-title">Sabores Artesanais</h5>
             <p class="card-text">Harmonize seu café com receitas exclusivas, preparadas diariamente com ingredientes frescos e amor.</p>
@@ -173,11 +173,11 @@
 
 
   <!-- Cardapio -->
-<div class="mt-5 parallax-banner d-flex align-items-center justify-content-center text-center">
+<div class="mt-5 parallax-banner bannercardapio d-flex align-items-center justify-content-center text-center" id="cardapio">
   
   <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-    <h1 class="display-4 fw-bold">Cardapio</h1>
-    <p class="lead">O que você encontra na Casa do Barista</p>
+    <h1 class="display-4 fw-bold">Cardápio</h1>
+    <p class="lead">Do clássico espresso às nossas criações exclusivas.</p>
   </div>
 </div>
 
@@ -185,50 +185,90 @@
   <div class="cardapio m-5 d-flex gap-5">
 
     <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/graos.jpg" class="card-img-left w-50 m-2" alt="...">
+  <img src="assets/mocha.jpg" class="card-img-left w-50 m-2" alt="imagem: Café Mocha">
   <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-75">
-     <h5 class="card-title">Nome </h5>
-    <h5 class="card-price text-end hide"> R$ </h5>
+   <div class="linha d-flex justify-content-between align-items-center w-100">
+     <h5 class="card-title">Mocha </h5>
+    <h5 class="card-price text-end"> R$14,50 </h5>
    </div>
-    <p class="card-text hide"> Descrição </p>
+    <p class="card-text"> Café espresso, calda de chocolate, leite e chantilly </p>
   </div>
 </div>
 
    <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/graos.jpg" class="card-img-left w-50 m-2" alt="...">
+  <img src="assets/matcha.jpg" class="card-img-left w-50 m-2" alt="imagem: Chá matcha">
   <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-75">
-     <h5 class="card-title">Nome </h5>
-    <h5 class="card-price text-end hide"> R$ </h5>
+   <div class="linha d-flex justify-content-between align-items-center w-100">
+     <h5 class="card-title">Matcha </h5>
+    <h5 class="card-price text-end hide"> R$11,90 </h5>
    </div>
-    <p class="card-text hide"> Descrição </p>
+    <p class="card-text hide"> Folhas de chá verde, água, leite e adoçante </p>
   </div>
 </div>
 
    <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/graos.jpg" class="card-img-left w-50 m-2" alt="...">
+  <img src="assets/coldbrew.png" class="card-img-left w-50 m-2" alt="imagem: Cold brew">
   <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-75">
-     <h5 class="card-title">Nome </h5>
-    <h5 class="card-price text-end hide"> R$ </h5>
+   <div class="linha d-flex justify-content-between align-items-center w-100">
+     <h5 class="card-title">Cold Brew </h5>
+    <h5 class="card-price text-end hide"> R$11,50 </h5>
    </div>
-    <p class="card-text hide"> Descrição </p>
+    <p class="card-text hide"> Café moido, água gelada, leite e açucar </p>
   </div>
 </div>
 
+
   </div>
+
+   <div class="cardapio m-5 mt-2 d-flex gap-5">
+
+    <div class="card cardhover border-secondary" style="width: 22rem;">
+  <img src="assets/cupcake.jpg" class="card-img-left w-50 m-2" alt="imagem: Cupcake de chocolate">
+  <div class="card-body">
+   <div class="linha d-flex justify-content-between align-items-center w-100">
+     <h5 class="card-title">Cupcake de chocolate</h5>
+    <h5 class="card-price text-end"> R$8,50 </h5>
+   </div>
+    <p class="card-text"> Massa de cacau 100%, recheio de ganache meio amargo e chantilly </p>
+  </div>
+</div>
+
+   <div class="card cardhover border-secondary" style="width: 22rem;">
+  <img src="assets/macaronpistache.jpg" class="card-img-left w-50 m-2" alt="imagem: Macaron de pistache">
+  <div class="card-body">
+   <div class="linha d-flex justify-content-between align-items-center w-100">
+     <h5 class="card-title">Macaron de pistache </h5>
+    <h5 class="card-price text-end"> R$8,90 </h5>
+   </div>
+    <p class="card-text"> recheio cremoso de pistache siciliano e pedaços da semente tostada. </p>
+  </div>
+</div>
+
+   <div class="card cardhover border-secondary" style="width: 22rem;">
+  <img src="assets/minitortacookie.png" class="card-img-left w-50 m-2" alt="imagem: Mini torta cookie recheada com nutella">
+  <div class="card-body">
+   <div class="linha d-flex justify-content-between align-items-center w-100">
+     <h5 class="card-title">Mini torta cookie </h5>
+    <h5 class="card-price text-end"> R$18,50 </h5>
+   </div>
+    <p class="card-text"> recheada com Nutella e gotas de chocolate ao leite. </p>
+  </div>
+</div>
+
+
+  </div>
+  
   <div class="text-end botaocardapio">
     <a class="btn btn-secondary" href="#" role="button">Veja mais</a>
   </div>
 </div>
 
   <!-- Equipe -->
-<div class="mt-5 parallax-banner d-flex align-items-center justify-content-center text-center">
+<div class="mt-5 parallax-banner bannerequipe d-flex align-items-center justify-content-center text-center">
   
   <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
     <h1 class="display-4 fw-bold">Equipe</h1>
-    <p class="lead">O que você encontra na Casa do Barista</p>
+    <p class="lead">As mãos por trás da sua xícara favorita.</p>
   </div>
 </div>
 
@@ -237,7 +277,7 @@
     
     <div class="col d-flex justify-content-center">
       <div class="card cardequipe bg-black text-white border-0 pt-0 px-4 pb-4" style="width: 15rem; border-radius: 20px;">
-        <img src="assets/barista1.jpg" class="card-img-top object-fit-cover mx-auto" alt="Nome">
+        <img src="assets/barista1.jpg" class="card-img-top object-fit-cover mx-auto" alt="Livia, barista da Casa do Barista, sorrindo e segurando uma xícara de café.">
         <div class="card-body text-center">
           <h5 class="card-title fw-bold m-0">Livia</h5>
           <p class="card-text text-secondary">Barista</p>
@@ -247,7 +287,7 @@
 
     <div class="col d-flex justify-content-center">
       <div class="card cardequipe bg-black text-white border-0 pt-0 px-4 pb-4" style="width: 15rem; border-radius: 20px;">
-        <img src="assets/barista2.jpg" class="card-img-top object-fit-cover mx-auto" alt="Nome">
+        <img src="assets/barista2.jpg" class="card-img-top object-fit-cover mx-auto" alt="Julia, especialista em métodos de extração, preparando um café artesanal.">
         <div class="card-body text-center">
           <h5 class="card-title fw-bold m-0">Julia</h5>
           <p class="card-text text-secondary">Barista</p>
@@ -257,7 +297,7 @@
 
     <div class="col d-flex justify-content-center">
       <div class="card cardequipe bg-black text-white border-0 pt-0 px-4 pb-4" style="width: 15rem; border-radius: 20px;">
-        <img src="assets/barista3.png" class="card-img-top object-fit-cover mx-auto" alt="Nome">
+        <img src="assets/barista3.png" class="card-img-top object-fit-cover mx-auto" alt="Rebecca, responsável pelo atendimento ao cliente, no balcão da cafeteria.">
         <div class="card-body text-center">
           <h5 class="card-title fw-bold m-0">Rebecca</h5>
           <p class="card-text text-secondary">Atendente</p>
@@ -267,7 +307,7 @@
 
     <div class="col d-flex justify-content-center">
       <div class="card cardequipe bg-black text-white border-0 pt-0 px-4 pb-4" style="width: 15rem; border-radius: 20px;">
-        <img src="assets/barista4.jpg" class="card-img-top object-fit-cover mx-auto" alt="Nome">
+        <img src="assets/barista4.jpg" class="card-img-top object-fit-cover mx-auto" alt="Claudia, gerente da Casa do Barista, sorrindo no balcão da cafeteria.">
         <div class="card-body text-center">
           <h5 class="card-title fw-bold m-0">Claudia</h5>
           <p class="card-text text-secondary">Gerente</p>
@@ -281,18 +321,18 @@
 
 
   <!-- Eventos -->
-<div class="mt-5 parallax-banner d-flex align-items-center justify-content-center text-center">
+<div class="mt-5 parallax-banner bannereventos d-flex align-items-center justify-content-center text-center" id="eventos">
   
   <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
     <h1 class="display-4 fw-bold">Eventos</h1>
-    <p class="lead">O que você encontra na Casa do Barista</p>
+    <p class="lead">Celebre conosco: música, reuniões e celebrações</p>
   </div>
 </div>
 
 <div class="container mt-5 d-flex flex-wrap gap-4 justify-content-center">
   
   <div class="card cardeventos bg-light" style="width: 17rem;">
-    <img src="assets/casamento.jpeg" class="card-img-top" alt="Casamento">
+    <img src="assets/casamento.jpeg" class="card-img-top" alt="imagem: foto de noivos brindando uma xícara de café">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">Casa do evento</h5>
       <h6 class="card-subtitle mb-2 text-muted">Casamento</h6>
@@ -305,7 +345,7 @@
   </div>
 
   <div class="card cardeventos bg-light" style="width: 17rem;">
-    <img src="assets/musicaaovivo.png" class="card-img-top" alt="Música">
+    <img src="assets/musicaaovivo.png" class="card-img-top" alt="imagem: Foto de uma apresentação de musica ao vivo">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">Casa do evento</h5>
       <h6 class="card-subtitle mb-2 text-muted">Música ao Vivo</h6>
@@ -318,7 +358,7 @@
   </div>
 
   <div class="card cardeventos bg-light" style="width: 17rem;">
-    <img src="assets/reservas.png" class="card-img-top" alt="Reservas">
+    <img src="assets/reservas.png" class="card-img-top" alt="imagem: Foto de uma reunião">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">Casa do evento</h5>
       <h6 class="card-subtitle mb-2 text-muted">Reuniões</h6>
@@ -333,22 +373,156 @@
 </div>
 
  <!-- Galeria -->
-<div class="mt-5 parallax-banner d-flex align-items-center justify-content-center text-center">
+<div class="mt-5 parallax-banner bannergaleria d-flex align-items-center justify-content-center text-center" id="galeria">
   
   <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
     <h1 class="display-4 fw-bold">Galeria</h1>
-    <p class="lead">O que você encontra na Casa do Barista</p>
+    <p class="lead">Fragmentos de uma tarde perfeita.</p>
   </div>
 </div>
 
 <div class="container mt-5 galeria">
-  <img src="assets/reservas.png" alt="">
-  <img src="assets/musicaaovivo.png" alt="">
-  <img src="assets/casamento.jpeg" alt="">
-  <img src="assets/ambiente.jpg" alt="">
-  <img src="assets/graos.jpg" alt="">
+  <img src="assets/reservas.png" alt="imagem: foto de uma reunião">
+  <img src="assets/musicaaovivo.png" alt="imagem: foto de uma apresentação de musica">
+  <img src="assets/casamento.jpeg" alt="imagem: noivos brindando uma xícara de café">
+  <img src="assets/ambiente.jpg" alt="imagem: Cafeteria">
+  <img src="assets/graos.jpg" alt="imagem: Grãos de café">
+  <img src="assets/brinde_banner.jpg" alt="imagem: três pessoas brindando">
 </div>
 
+  <!-- Depoimentos -->
+<div class="mt-5 parallax-banner bannerdepoimentos d-flex align-items-center justify-content-center text-center">
+  
+  <div class="p-5" style="z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+    <h1 class="display-4 fw-bold">Depoimentos</h1>
+    <p class="lead">Vozes de quem escolheu a Casa do Barista como casa.</p>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5 text-center">
+    <div class="depoimentos-slider">
+        
+        <div class="px-3">
+            <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+            </div>
+            <div class="textodepoimento mx-auto bg-black text-white p-4 rounded shadow-sm mb-4" style="max-width: 700px;">
+                <p class="m-0 italic">"O Matcha Latte daqui é simplesmente o melhor que já tomei. O ambiente é super calmo, perfeito para trabalhar ou ler um livro enquanto aprecio um Cold Brew impecável."</p>
+            </div>
+            <div class="fotoperfil d-flex flex-column align-items-center">
+              <img src="assets/usuaria1.jpg" class="rounded-circle mb-2 shadow-sm" alt="imagem: Foto de perfil da Mariana" style="width: 60px; height: 60px; object-fit: cover;">
+              <span class="fw-bold">Mariana Silva</span>
+            </div>
+        </div>
+
+        <div class="px-3">
+            <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+            </div>
+            <div class="textodepoimento mx-auto bg-black text-white p-4 rounded shadow-sm mb-4" style="max-width: 700px;">
+                <p class="m-0 italic">"Atendimento nota dez. Os baristas realmente entendem de café e o espaço para reuniões é excelente. Recomendo muito o Mocha da casa!"</p>
+            </div>
+            <div class="fotoperfil d-flex flex-column align-items-center">
+              <img src="assets/usuario2.jpg" class="rounded-circle mb-2 shadow-sm" alt="imagem: Foto de perfil do Ricardo Oliveira" style="width: 60px; height: 60px; object-fit: cover;">
+              <span class="fw-bold">Ricardo Oliveira</span>
+            </div>
+        </div>
+
+        <div class="px-3">
+    <div class="stars mb-3 text-center">
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+    </div>
+    <div class="textodepoimento mx-auto bg-black text-white p-4 rounded shadow-sm mb-4" style="max-width: 700px;">
+        <p class="m-0 italic">"O melhor lugar para começar o dia! O grão selecionado faz toda a diferença e o ambiente é super acolhedor. Não deixem de provar o Cold Brew!"</p>
+    </div>
+    <div class="fotoperfil d-flex flex-column align-items-center">
+        <img src="assets/usuaria3.jpg" class="rounded-circle mb-2 shadow-sm" alt="imagem: Foto de perfil da Mariana Souza" style="width: 60px; height: 60px; object-fit: cover;">
+        <span class="fw-bold">Miranda Samara</span>
+    </div>
+</div>
+
+    </div>
+</div>
+
+<footer id="contato" class="bg-black text-white py-5">
+    <div class="container">
+        <div class="row g-4 align-items-start">
+            
+            <div class="col-md-4">
+                <div class="p-4 text-center" style="background-color: #5d4037; min-height: 250px;">
+                    <h4 class="fw-bold mb-4">Nosso endereço</h4>
+                    <p class="mb-0">Av. Marechal Tito</p>
+                    <p>São Miguel Paulista</p>
+                    <a href="https://maps.app.goo.gl/q2pywLkyZQJ13v7w9" target="_blank" class="text-white fw-bold text-decoration-none mt-4 d-inline-block">MAPA</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="p-4 text-center position-relative" style="background-color: #5d4037; margin-top: -50px; z-index: 5;">
+                    <h4 class="fw-bold mb-3">Faça sua reserva</h4>
+                    <hr class="border-light opacity-50 mb-4">
+                    
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span>seg - sex</span>
+                        <span>09:00 - 00:00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span>Sábado</span>
+                        <span>08:00 - 00:00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span>Domingo</span>
+                        <span>16:00 - 00:00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4 small">
+                        <span>Feriado</span>
+                        <span>16:00 - 00:00</span>
+                    </div>
+
+                    <button class="btn btn-black bg-black text-white w-100 py-2 mb-3">Reserve</button>
+                </div>
+            </div>
+
+          <div class="col-md-4">
+        <div class="p-4 h-100" style="background-color: #5d4037; min-height: 250px;">
+          <h4 class="fw-bold text-center">Contate-nos</h4>
+          <div class="mt-3 text-center">
+          <p class="mb-1">
+          <a href="#" class="text-white text-decoration-none hover-link" data-bs-toggle="modal" data-bs-target="#modalRedes">casadobarista@gmail.com </a></p>
+          <p><a href="#" class="text-white text-decoration-none hover-link" data-bs-toggle="modal" data-bs-target="#modalRedes">(11) 99999-9999</a></p>
+        </div>
+         <div class="d-flex justify-content-center gap-3 mt-4">
+          <a href="#" class="text-white fs-4"><i class="bi bi-facebook"  data-bs-toggle="modal" data-bs-target="#modalRedes"></i></a>
+          <a href="#" class="text-white fs-4"><i class="bi bi-instagram" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></a>
+          <a href="#" class="text-white fs-4"><i class="bi bi-whatsapp" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></a>
+          <a href="#" class="text-white fs-4"><i class="bi bi-linkedin" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></a>
+        </div>
+        </div>
+      </div>
+
+        </div>
+    </div>
+</footer>
+ <div class="bg-secondary text-center">
+    <p class="mb-0 fs-5"> &copy; 2026 Casa do Barista. Todos os direitos reservados. </p>
+    </div>
+
+
+
+
+    
 
 <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -412,6 +586,38 @@
   ]
 });
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.depoimentos-slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      arrows: false
+    });
+  });
+</script>
+
+
+<div class="modal fade" id="modalRedes" tabindex="-1" aria-labelledby="modalRedesLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-secondary">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalRedesLabel">Aviso</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <i class="bi bi-exclamation-triangle text-warning display-4 mb-3"></i>
+        <p class="lead">Ops! Estas redes sociais não existem.</p>
+        <p class="small text-secondary">O site é um projeto de portifólio, por isso os dados são fictícios!</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

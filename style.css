@@ -18,7 +18,7 @@ ul{
 }
 
 .slick-prev:before, .slick-next:before {
-    color: #b72020 !important;
+    color: white !important;
 }
 
 .slick-prev {
@@ -41,7 +41,6 @@ ul{
 }
 
 .parallax-banner {
-    background-image: url('assets/banner_latte.jpg');
     height: 350px; 
     background-attachment: fixed;
     background-position: center;
@@ -50,14 +49,46 @@ ul{
     position: relative;
     background-color: rgba(0,0,0,0.3);
     background-blend-mode: overlay;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8)
+}
+
+.bannerdestaque{
+    background-image: url('assets/banner_latte.jpg');
+}
+
+.bannercardapio{
+    background-image: url('assets/latteart_banner.jpg');
+}
+
+.bannerequipe{
+    background-image: url('assets/maquina_banner.jpg');
+}
+
+.bannereventos{
+    background-image: url('assets/brinde_banner.jpg');
+}
+
+.bannergaleria{
+    background-image: url('assets/foto_banner.jpg');
+}
+
+.bannerdepoimentos{
+    background-image: url('assets/sorrisos_banner.jpg');
+}
+
+
+.banner p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 700;
 }
 
 .arrendondado{
     border-radius: 25% 20%;
 }
 
-.cardhover:hover img{
-width: 100%;
+.cardhover img{
+    width: 171px;
+    height: 91px;
 }
 
 .botaocardapio{
@@ -89,6 +120,7 @@ width: 100%;
 .galeria img{
     height: 167px;
 }
+
 
 @media only screen and (max-width: 1000px) {
     .anos {
@@ -133,8 +165,7 @@ width: 100%;
     margin-bottom: 15px;
 }
 
-.banner h1, 
-.banner p {
+.banner h1, .banner p {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
     font-weight: 500;
 }
@@ -142,6 +173,12 @@ width: 100%;
 .banner .btn-lg {
     padding: 8px 20px;
     font-size: 0.9rem;
+}
+}
+
+@media only screen and (min-width: 1000px) {
+    .destaque{
+    background-color: black;
 }
 
 }
