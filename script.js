@@ -1,7 +1,7 @@
 let carrinho =[];
 async function carregarCardapio() { 
     try {
-        const resposta = await fetch('http://192.168.15.98:3000/api/produtos');
+        const resposta = await fetch('https://cafeteriasite.onrender.com/api/produtos');
         const produtos = await resposta.json();
         
      
@@ -151,7 +151,7 @@ async function enviarParaZap() {const agora = new Date();
         };
 
         try {
-            const resposta = await fetch('http://192.168.15.98:3000/api/finalizar-pedido', {
+            const resposta = await fetch('https://cafeteriasite.onrender.com/api/finalizar-pedido', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(pedido)
