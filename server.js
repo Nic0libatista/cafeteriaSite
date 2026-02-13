@@ -36,6 +36,13 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    }, 
+    // Força o uso de IPv4
+    family: 4, 
+    connectionTimeout: 20000, 
+    greetingTimeout: 20000,
+    tls: {
+        rejectUnauthorized: false
     }
 });
 
