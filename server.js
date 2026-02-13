@@ -10,7 +10,11 @@ const express = require('express');
 const nodemailer = require("nodemailer");
 const app = express();
 const cors = require('cors');
-app.use(cors()); 
+app.use(cors({
+    origin: 'https://nic0libatista.github.io',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+})); 
 app.use(express.json()); 
 
 const Produto = require('./models/produto'); 
