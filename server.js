@@ -29,6 +29,7 @@ app.get('/api/produtos', async (req, res) => {
     }
 });
 
+ /*
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -47,6 +48,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Rota para receber o pedido do front-end
+
 app.post('/api/finalizar-pedido', (req, res) => {
     const { cliente, emailCliente, endereco, pagamento, itens, total } = req.body;
     // lista produtos
@@ -86,8 +88,50 @@ app.post('/api/finalizar-pedido', (req, res) => {
         }
         res.status(200).send('Pedido enviado com sucesso!');
     });
-});
+}); */
 
+const { Resend } = require('resend');
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+app.post('/api/finalizar-pedido', async (req, res) => {
+    try {
+        const { cliente, emailCliente, endereco, pagamento, itens, total } = req.body;
+
+        if (!cliente || !emailCliente || !endereco || !itens?.length) {
+            return res.status(400).json({ erro: "Dados incompletos" });
+        }
+
+        const listaItensHtml = itens.map(item => `
+            <li>${item.nome} - R$ ${(item.preco || 0).toFixed(2)}</li>
+        `).join('');
+
+        await resend.emails.send({
+            from: 'Casa do Barista <onboarding@resend.dev>',
+            to: ['nicolisantosbatista@gmail.com', emailCliente],
+            subject: `Confirmação de Pedido - ${cliente}`,
+            html: `
+                <h1>Olá ${cliente}!</h1>
+                <p>Seu pedido foi recebido.</p>
+
+                <h3>Resumo do pedido:</h3>
+                <ul>${listaItensHtml}</ul>
+
+                <p><strong>Total:</strong> R$ ${total}</p>
+                <p><strong>Pagamento:</strong> ${pagamento}</p>
+                <p><strong>Entrega:</strong> ${endereco}</p>
+
+                <hr>
+               <p style="font-size: 0.9em; color: #666;">Obrigado por comprar na <strong>Casa do Barista</strong>!</p>
+            `
+        });
+
+        res.status(200).json({ mensagem: "Pedido enviado!" });
+
+    } catch (error) {
+        console.error("Erro no Resend:", error);
+        res.status(500).json({ erro: "Erro ao enviar e-mail" });
+    }
+});
 
 
 app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
