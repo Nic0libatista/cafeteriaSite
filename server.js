@@ -38,7 +38,6 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     }, 
-    // Força o uso de IPv4
     family: 4, 
     connectionTimeout: 20000, 
     greetingTimeout: 20000,
@@ -90,6 +89,7 @@ app.post('/api/finalizar-pedido', (req, res) => {
     });
 }); */
 
+// rota pro envio de email com Resend
 const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -110,15 +110,15 @@ app.post('/api/finalizar-pedido', async (req, res) => {
             to: ['nicolisantosbatista@gmail.com', emailCliente],
             subject: `Confirmação de Pedido - ${cliente}`,
             html: `
-                <h1>Olá ${cliente}!</h1>
-                <p>Seu pedido foi recebido.</p>
+                <h1 style="color: #4b2c20;">Olá ${cliente}!</h1>
+                 <p>Seu pedido foi recebido com sucesso e já está sendo preparado.</p>
 
-                <h3>Resumo do pedido:</h3>
+                <h3 style="border-bottom: 1px solid #ccc;">Resumo do Pedido:</h3>
                 <ul>${listaItensHtml}</ul>
 
                 <p><strong>Total:</strong> R$ ${total}</p>
-                <p><strong>Pagamento:</strong> ${pagamento}</p>
-                <p><strong>Entrega:</strong> ${endereco}</p>
+                <p><strong>Forma de pagamento:</strong> ${pagamento}</p>
+                <p><strong>Endereço de entrega:</strong> ${endereco}</p>
 
                 <hr>
                <p style="font-size: 0.9em; color: #666;">Obrigado por comprar na <strong>Casa do Barista</strong>!</p>
