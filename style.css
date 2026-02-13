@@ -123,6 +123,7 @@ ul{
 }
 
 
+
 @media only screen and (max-width: 1000px) {
     .anos {
         flex-direction: column !important; 
@@ -175,6 +176,26 @@ ul{
     padding: 8px 20px;
     font-size: 0.9rem;
 }
+
+.carrinho-flutuante {
+    display: flex;
+    position: fixed;
+    bottom: 20px;       
+    right: 20px;    
+    width: 60px;
+    height: 60px;
+    background-color: #5d4037; 
+    color: white;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 1000;      /* Garante que fique acima de tudo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.redessociais .bi, .compras .bi {
+        font-size: 32px !important;
+    }
 }
 
 @media only screen and (min-width: 1000px) {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="icon" type="image/png" href="assets/iconecafe.png">
 </head>
 <body>
@@ -45,7 +45,7 @@
       </ul>
  <div class="d-flex align-items-center gap-5 ms-lg-5">
         <div class="contato mg-10">
-            <ul class="list-unstyled m-0 d-flex gap-2 text-white">
+            <ul class="list-unstyled redessociais m-0 d-flex gap-2 text-white">
                 <li><i class="bi bi-facebook" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></li>
                 <li><i class="bi bi-linkedin" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></li>
                 <li><i class="bi bi-whatsapp" data-bs-toggle="modal" data-bs-target="#modalRedes"></i></li>
@@ -53,8 +53,8 @@
         </div>
 
         <div class="login">
-            <ul class="list-unstyled m-0 text-white">
-                <li><i class="bi bi-minecart-loaded"></i></li>
+            <ul class="list-unstyled m-0 text-white compras">
+                <li><i class="bi bi-minecart-loaded" data-bs-toggle="modal" data-bs-target="#modalCarrinho"></i><span id="carrinho-qtd" class="badge rounded-pill bg-danger">0</span></li>
             </ul>
         </div>
     </div>
@@ -184,84 +184,12 @@
 </div>
 
 <div class="container">
-  <div class="cardapio m-5 d-flex gap-5">
+  <div class="cardapio m-5 d-flex gap-5"></div>
 
-    <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/mocha.jpg" class="card-img-left w-50 m-2" alt="imagem: Café Mocha">
-  <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-100">
-     <h5 class="card-title">Mocha </h5>
-    <h5 class="card-price text-end"> R$14,50 </h5>
-   </div>
-    <p class="card-text"> Café espresso, calda de chocolate, leite e chantilly </p>
-  </div>
-</div>
+  <div class="cardapio m-5 mt-2 d-flex gap-5"></div>
 
-   <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/matcha.jpg" class="card-img-left w-50 m-2" alt="imagem: Chá matcha">
-  <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-100">
-     <h5 class="card-title">Matcha </h5>
-    <h5 class="card-price text-end hide"> R$11,90 </h5>
-   </div>
-    <p class="card-text hide"> Folhas de chá verde, água, leite e adoçante </p>
-  </div>
-</div>
-
-   <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/coldbrew.png" class="card-img-left w-50 m-2" alt="imagem: Cold brew">
-  <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-100">
-     <h5 class="card-title">Cold Brew </h5>
-    <h5 class="card-price text-end hide"> R$11,50 </h5>
-   </div>
-    <p class="card-text hide"> Café moido, água gelada, leite e açucar </p>
-  </div>
-</div>
-
-
-  </div>
-
-   <div class="cardapio m-5 mt-2 d-flex gap-5">
-
-    <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/cupcake.jpg" class="card-img-left w-50 m-2" alt="imagem: Cupcake de chocolate">
-  <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-100">
-     <h5 class="card-title">Cupcake de chocolate</h5>
-    <h5 class="card-price text-end"> R$8,50 </h5>
-   </div>
-    <p class="card-text"> Massa de cacau 100%, recheio de ganache meio amargo e chantilly </p>
-  </div>
-</div>
-
-   <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/macaronpistache.jpg" class="card-img-left w-50 m-2" alt="imagem: Macaron de pistache">
-  <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-100">
-     <h5 class="card-title">Macaron de pistache </h5>
-    <h5 class="card-price text-end"> R$8,90 </h5>
-   </div>
-    <p class="card-text"> recheio cremoso de pistache siciliano e pedaços da semente tostada. </p>
-  </div>
-</div>
-
-   <div class="card cardhover border-secondary" style="width: 22rem;">
-  <img src="assets/minitortacookie.png" class="card-img-left w-50 m-2" alt="imagem: Mini torta cookie recheada com nutella">
-  <div class="card-body">
-   <div class="linha d-flex justify-content-between align-items-center w-100">
-     <h5 class="card-title">Mini torta cookie </h5>
-    <h5 class="card-price text-end"> R$18,50 </h5>
-   </div>
-    <p class="card-text"> recheada com Nutella e gotas de chocolate ao leite. </p>
-  </div>
-</div>
-
-
-  </div>
-  
   <div class="text-end botaocardapio">
-    <a class="btn btn-secondary" href="#" role="button">Veja mais</a>
+    <a class="btn btn-secondary" onclick="carregarMaisProdutos()">Veja mais</a>
   </div>
 </div>
 
@@ -604,6 +532,9 @@
   });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', carregarCardapio);
+</script>
 
 <div class="modal fade" id="modalRedes" tabindex="-1" aria-labelledby="modalRedesLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -619,6 +550,69 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal fade" id="modalCarrinho" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title">Seu Pedido - Casa do Barista</h5>
+        <hr class="border-secondary">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+     <div class="modal-body">
+    <div id="tela-carrinho">
+        <ul id="lista-carrinho" class="list-group list-group-flush"></ul>
+        <div class="mt-3 text-end">
+            <h4 id="total-carrinho">Total: R$ 0,00</h4>
+        </div>
+        <button class="btn btn-primary w-100 mt-3" onclick="irParaEntrega()">Próximo: Dados de Entrega</button>
+    </div>
+
+    <div id="tela-entrega" class="d-none">
+        <button class="btn btn-sm btn-link text-white p-0 mb-3" onclick="voltarParaCarrinho()">
+            <i class="bi bi-arrow-left"></i> Voltar aos itens
+        </button>
+        <form id="form-entrega">
+            <div class="mb-2">
+                <label class="form-label small">Seu Nome:</label>
+                <input type="text" id="cliente-nome" class="form-control bg-dark text-white border-secondary">
+            </div>
+             <div class="mb-2">
+                <label class="form-label small">Seu Email:</label>
+                <input type="email" id="cliente-email" class="form-control bg-dark text-white border-secondary">
+            </div>
+            <div class="mb-2">
+            <label class="form-label small">Seu WhatsApp (com DDD):</label>
+            <input type="tel" id="cliente-telefone" placeholder="Ex: 11999999999" class="form-control bg-dark text-white border-secondary">
+            </div>
+            <div class="mb-2">
+                <label class="form-label small">Endereço Completo:</label>
+                <textarea id="cliente-endereco" class="form-control bg-dark text-white border-secondary" rows="2"></textarea>
+            </div>
+              
+            <div class="mb-3">
+                <label class="form-label small">Forma de Pagamento:</label>
+                <select id="cliente-pagamento" class="form-select bg-dark text-white border-secondary">
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão">Cartão (Maquininha)</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-success w-100" onclick="enviarParaZap()">
+                <i class="bi bi-envelope-at"></i> Enviar nota do pedido para o Email
+            </button>
+        </form>
+    </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="carrinho-flutuante d-lg-none" data-bs-toggle="modal" data-bs-target="#modalCarrinho">
+    <i class="bi bi-minecart-loaded"></i>
+    <span id="carrinho-qtd-mobile" class="badge rounded-pill bg-danger"  style="font-size: 8px; margin-top: 19px; z-index: 1000;">0</span>
 </div>
 
 </body>

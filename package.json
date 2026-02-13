@@ -1,0 +1,27 @@
+{
+  "name": "sitecafe",
+  "version": "1.0.0",
+  "description": "O site Casa do Barista é uma plataforma web institucional desenvolvida com foco em design responsivo e experiência imersiva.",
+  "main": "script.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nic0libatista/cafeteriaSite.git"
+  },
+  "keywords": [],
+  "author": "Nicoli Batista",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nic0libatista/cafeteriaSite/issues"
+  },
+  "homepage": "https://github.com/Nic0libatista/cafeteriaSite#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "nodemailer": "^8.0.1"
+  }
+}
